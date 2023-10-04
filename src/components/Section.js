@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 
 const Section = ({ title, description, leftBut, RightBut, backgroundImg }) => {
   return (
-    <Wrap id="modelS" bgImg={backgroundImg}>
+    <Wrap id="modelS" $bgimg={backgroundImg}>
       <Fade bottom>
         <ItemText>
           <h1>{title}</h1>
@@ -37,7 +37,7 @@ const Wrap = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: ${(props) => `url(${props.bgImg})`};
+  background-image: ${({ $bgimg }) => `url(${$bgimg})`};
 `;
 
 const ItemText = styled.div`

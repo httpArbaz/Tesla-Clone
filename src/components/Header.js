@@ -32,7 +32,7 @@ const Header = () => {
             }}
           />
         </RightMenu>
-        <BurgerNav show={burgerStatus}>
+        <BurgerNav className={burgerStatus ? "show" : "hide"}>
           <CloseWrapper>
             <CustomClose
               onClick={() => {
@@ -125,7 +125,13 @@ const BurgerNav = styled.div`
   display: flex;
   flex-direction: column;
   text-align: start;
-  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
+  &.show {
+    transform: translateX(0);
+  }
+
+  &.hide {
+    transform: translateX(100%);
+  }
   transition: transform 0.2s ease;
   li {
     padding: 15px 0;
